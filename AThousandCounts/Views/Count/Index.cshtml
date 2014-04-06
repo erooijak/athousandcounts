@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="tile bg-green">
+    <div class="tile-content icon">
+    </div>
+</div>
+
+<div class="tile selected bg-yellow">
+</div>
+<div class="tile quadro triple-vertical bg-crimson bg-active-black">
+</div>
+
+@Ajax.ActionLink("Save IP", // <-- Text to display
+     "GetIPAddress", // <-- Action Method Name
+     new AjaxOptions
+     {
+        UpdateTargetId="", // <-- Used if you want to update up, DOM element ID to update
+        HttpMethod = "GET" 
+     })
+
+<button class="tile triple-vertical default">Save IP</button>
+<div class="tile quadro tile bg-yellow bg-active-cobalt">
+</div>

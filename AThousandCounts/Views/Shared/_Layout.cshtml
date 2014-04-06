@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - A Thousand Counts</title>
+    @Styles.Render("~/Content/MetroCss")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="metro">
+    <div class="container">
+        <nav class="navigation-bar dark">
+            <nav class="navigation-bar-content">
+                <a href="@Url.Action("Index", "Count")"><item class="element">A Thousand Counts</item></a>
+                <item class="element-divider"></item>
+                <a href="@Url.Action("Index", "Explained")"><item class="element">Explained</item></a>
+            </nav>
+        </nav>
+        <div class="grid">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+        <footer>
+            <hr />
+            <p class="footer">&copy; @DateTime.Now.Year - A Thousand Counts</p>
+        </footer>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/metro")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

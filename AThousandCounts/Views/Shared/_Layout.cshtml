@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title - A Thousand Counts</title>
     @Styles.Render("~/Content/MetroCss")
-    @Scripts.Render("~/bundles/modernizr")
+    @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body class="metro">
     <div class="container">
@@ -25,9 +25,9 @@
             <hr />
             <p class="footer">&copy; @DateTime.Now.Year - A Thousand Counts</p>
         </footer>
-        @Scripts.Render("~/bundles/jquery")
+        @*@Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/metro")
-        @RenderSection("scripts", required: false)
+        @RenderSection("scripts", required: false)*@
     </div>
 </body>
 </html>

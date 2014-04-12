@@ -133,6 +133,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ExplainedController.cs" />
     <Compile Include="Controllers\CountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -152,18 +153,61 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="01F8F6E2.htm" />
     <Content Include="Content\css\iconFont.min.css" />
     <Content Include="Content\css\metro-bootstrap-responsive.css" />
     <Content Include="Content\css\metro-bootstrap-responsive.min.css" />
     <Content Include="Content\css\metro-bootstrap.css" />
     <Content Include="Content\css\metro-bootstrap.min.css" />
-    <Content Include="favicon.ico" />
+    <Content Include="Content\images\jerownchiabiera.png" />
+    <Content Include="ScriptCam\favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\iconFont.dev.svg" />
     <Content Include="fonts\iconFont.svg" />
     <Content Include="fonts\metroSysIcons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ScriptCam\01_-_Default1noCulling.JPG" />
+    <Content Include="ScriptCam\02_-_Default1noCulling.JPG" />
+    <Content Include="ScriptCam\03_-_Default1noCulling.JPG" />
+    <Content Include="ScriptCam\3D_female.js" />
+    <Content Include="ScriptCam\angry.gif" />
+    <Content Include="ScriptCam\biggrin.gif" />
+    <Content Include="ScriptCam\bootstrap.min.css" />
+    <Content Include="ScriptCam\demo1.htm" />
+    <Content Include="ScriptCam\demo2.htm" />
+    <Content Include="ScriptCam\demo3.htm" />
+    <Content Include="ScriptCam\demo4.htm" />
+    <Content Include="ScriptCam\demo5.htm" />
+    <Content Include="ScriptCam\demo6.htm" />
+    <Content Include="ScriptCam\demo7.htm" />
+    <Content Include="ScriptCam\demo8.htm" />
+    <Content Include="ScriptCam\ledgreen.png" />
+    <Content Include="ScriptCam\ledred.png" />
+    <Content Include="ScriptCam\ledsbg.png" />
+    <Content Include="ScriptCam\miclogo.png" />
+    <Content Include="ScriptCam\mobile.htm" />
+    <Content Include="ScriptCam\ohmy.gif" />
+    <Content Include="ScriptCam\pleasewait.png" />
+    <Content Include="ScriptCam\sad.gif" />
+    <Content Include="ScriptCam\scriptcam.js" />
+    <Content Include="ScriptCam\scriptcam.min.js" />
+    <Content Include="ScriptCam\scriptcam.swf" />
+    <Content Include="ScriptCam\shutterclick.mp3" />
+    <Content Include="ScriptCam\slide-1.jpg" />
+    <Content Include="ScriptCam\slide-2.jpg" />
+    <Content Include="ScriptCam\slide-3.jpg" />
+    <Content Include="ScriptCam\slide-4.jpg" />
+    <Content Include="ScriptCam\slide-5.jpg" />
+    <Content Include="ScriptCam\slide-6.jpg" />
+    <Content Include="ScriptCam\slide-7.jpg" />
+    <Content Include="ScriptCam\smile.gif" />
+    <Content Include="ScriptCam\tongue.gif" />
+    <Content Include="ScriptCam\trackslider.png" />
+    <Content Include="ScriptCam\upload.gif" />
+    <Content Include="ScriptCam\volumeslider.png" />
+    <Content Include="ScriptCam\webcamlogo.png" />
+    <Content Include="ScriptCam\wink.gif" />
     <Content Include="Scripts\metro.min.js" />
     <Content Include="Scripts\metro\metro-accordion.js" />
     <Content Include="Scripts\metro\metro-button-set.js" />
@@ -262,6 +306,10 @@
     <None Include="Properties\PublishProfiles\athousandcounts - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\athousandcounts - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\athousandcounts - Web Deploy.pubxml" />
+    <Content Include="ScriptCam\README.md" />
+    <Content Include="ScriptCam\ScriptCam.jquery.json" />
+    <Content Include="ScriptCam\scriptcam.lic" />
+    <Content Include="ScriptCam\testprintpage.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -282,9 +330,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Count\Index.cshtml" />
+    <Content Include="Views\Count\Indexxx.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Explained\Index.cshtml" />
+    <Content Include="Views\Count\Index.cshtml" />
+    <Content Include="Views\Count\Indexx - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -294,8 +344,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
+    <Content Include="ScriptCam\packages.config" />
+    <None Include="ScriptCam\Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

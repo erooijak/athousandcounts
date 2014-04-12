@@ -1,19 +1,119 @@
-﻿@{
-    ViewBag.Title = "Home";
-}
+﻿
+<script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<!-- Please download the JW Player plugin from http://www.longtailvideo.com/jw-player/download -->
+<!--<script type="text/javascript" src="/jwplayer/jwplayer.js"></script>-->
+<script language="JavaScript" src="~/ScriptCam/scriptcam.js"></script>
+<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 
-<div class="tile bg-green">
-    <div class="tile-content icon">
+<script>
+    $(document).ready(function () {
+        $("#webcam").scriptcam({
+            width: 520,
+            height: 360,
+            path: '/ScriptCam/',
+            fileReady: fileReady,
+            cornerRadius: 20,
+            cornerColor: 'e3e5e2',
+            onError: onError,
+            showMicrophoneErrors: false,
+            timeLeft: timeLeft,
+            fileName: 'athousandcounts',
+            connected: showRecord
+        });
+
+    });
+    function showRecord() {
+        $("#recordStartButton").attr("disabled", false);
+    }
+    function startRecording() {
+        $("#recordStartButton").attr("disabled", true);
+        $("#recordStopButton").attr("disabled", false);
+        $("#recordPauseResumeButton").attr("disabled", false);
+        $.scriptcam.startRecording();
+    }
+    function closeCamera() {
+        $("#slider").slider("option", "disabled", true);
+        $("#recordPauseResumeButton").attr("disabled", true);
+        $("#recordStopButton").attr("disabled", true);
+        $.scriptcam.closeCamera();
+        $('#message').html('Please wait for the file conversion to finish...');
+    }
+    function fileReady(fileName) {
+        $('#recorder').hide();
+        $('#message').html('This file is now dowloadable for five minutes over <a href=' + fileName + '>here</a>.');
+        var fileNameNoExtension = fileName.replace(".mp4", "");
+
+    }
+    function onError(errorId, errorMsg) {
+        alert(errorMsg);
+    }
+
+    function timeLeft(value) {
+        $('#timeLeft').val(value);
+    }
+
+</script>
+<div class="span2">
+    <div class="tile bg-yellow bg-hover-black bg-active-cyan">
+        YOUR ADVERTISEMENT HERE
+    </div>
+    <div class="tile bg-green bg-hover-darkPink bg-active-dark">
+        YOUR ADVERTISEMENT HERE
+    </div>
+    <div class="tile bg-blue bg-focus-olive badge bg-hover-grayDark bg-active-mauve">
+        YOUR ADVERTISEMENT HERE
+    </div>
+
+</div>
+<div class="span7">
+    <div class="tile quadro triple-vertical bg-lighterBlue bg-active-lightBlue">
+        <div id="recorder">
+            <div id="webcam">
+            </div>
+  
+            <div class="brand bg-black">
+                <button id="recordStartButton" class="btn btn-small" onclick="startRecording()" disabled>Start Recording</button>&nbsp;
+                <span style="padding-left:5px;padding-right:5px;">
+                    Time left:
+                    <input type="text" id="timeLeft" style="width:50px;font-size:10px;">&nbsp;
+                </span>
+                <button id="recordStopButton" class="btn btn-small" onclick="closeCamera()" disabled>Stop Recording</button>
+            </div>
+        <div id="mediaplayer" style="display:none;"></div>
+</div>
+</div>
+</div>
+<div class="span2">
+    <div class="tile triple-vertical bg-crimson bg-active-black bg-focus-darkIndigo">
+        <br/>
+        <div id="message"></div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        YOUR ADVERTISEMENT HERE
     </div>
 </div>
 
-<div class="tile selected bg-yellow">
-</div>
-<div class="tile quadro triple-vertical bg-crimson bg-active-black">
-</div>
 
-@Html.ActionLink("Count", "GetIpAddress")
-
-<button class="tile triple-vertical default">Save IP</button>
-<div class="tile quadro tile bg-yellow bg-active-cobalt">
+<div class="span2">
+    <div class="tile double  double-vertical default bg-focus-lightPink bg-active-lightOrange" style="text-align:center;">
+        <strong>
+            <br/>
+            JEROWN CHIA BIERA
+            <img src="~/Content/images/jerownchiabiera.png" />
+            <br />IT'S IN THE GAME
+        </strong>
+    </div>
+    <div class="tile double attention bg-darkGreen bg-focus-darkBlue bg-active-darkMagenta">
+        YOUR ADVERTISEMENT HERE
+    </div>
 </div>

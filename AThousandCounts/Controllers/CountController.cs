@@ -23,6 +23,7 @@ namespace AThousandCounts.Controllers
         }
         public ActionResult Index()
         {
+  
             return View();
         }
 
@@ -33,6 +34,7 @@ namespace AThousandCounts.Controllers
 
         }
 
+        [HttpPost]
         public ActionResult GetIPAddress()
         {
             var ipAddress = System.Web.HttpContext.Current.Request.UserHostName;

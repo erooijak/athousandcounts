@@ -42,7 +42,6 @@ namespace AThousandCounts.Controllers
             var countModel = new CountModel
             {
                 IPAddress = ipAddress,
-                WebcamVideo = new WebcamVideo(),
             };
 
             db.Counts.Add(countModel);

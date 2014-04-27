@@ -1,5 +1,6 @@
 namespace AThousandCounts.Migrations
 {
+    using AThousandCounts.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -12,20 +13,15 @@ namespace AThousandCounts.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(AThousandCounts.Models.CountContext context)
+        protected override void Seed(AThousandCounts.Models.CountContext db)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            for (int i = 1; i <= 1000; i++)
+            {
+                db.Counts.AddOrUpdate(
+                  c => c.Count,
+                  new CountModel { Count = i }  
+                );
+            }
         }
     }
 }

@@ -11,7 +11,6 @@ namespace AThousandCounts.Models
         [Key]
         public int Count { get; set; }
         public string IPAddress { get; set; }
-        public int WebcamVideoID { get; set; }
-        public virtual WebcamVideo WebcamVideo {get;set;}
+        public bool Completed { get; set; }
     }
 }

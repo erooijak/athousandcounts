@@ -149,7 +149,6 @@
     <Compile Include="Models\ICountContext.cs" />
     <Compile Include="Models\CountContext.cs" />
     <Compile Include="Models\CountModel.cs" />
-    <Compile Include="Models\WebcamVideo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -301,6 +300,7 @@
     <Content Include="fonts\iconFont.eot" />
     <Content Include="connectionStrings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\athousandcounts - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\athousandcounts - FTP.pubxml" />
@@ -316,6 +316,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scriptcam-settings.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

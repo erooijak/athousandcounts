@@ -154,7 +154,6 @@
       <DependentUpon>201404271804354_RestructuringTheCount.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\ICountContext.cs" />
     <Compile Include="Models\CountContext.cs" />
     <Compile Include="Models\CountModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

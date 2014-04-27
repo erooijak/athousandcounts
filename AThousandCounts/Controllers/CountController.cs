@@ -30,7 +30,8 @@ namespace AThousandCounts.Controllers
         public void SaveIPAddress(CountModel count)
         {
             var ipAddress = System.Web.HttpContext.Current.Request.UserHostName;
-
+            
+            count.IPAddress = ipAddress;
             db.Counts.Attach(count);
             db.Entry(count).Property(c => c.IPAddress).IsModified = true;
             

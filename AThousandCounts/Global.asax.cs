@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AThousandCounts.Migrations;
+using AThousandCounts.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +20,10 @@ namespace AThousandCounts
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //var config = new Configuration();  
+            //var db = new CountContext();
+            //config.Seed(db);
         }
     }
 }

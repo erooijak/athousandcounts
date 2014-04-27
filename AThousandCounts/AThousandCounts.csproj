@@ -346,6 +346,8 @@
     <Content Include="Views\Count\Index.cshtml" />
     <Content Include="Views\Count\_WebCam.cshtml" />
     <Content Include="Views\Count\_Count.cshtml" />
+    <Content Include="Views\Count\_Explained.cshtml" />
+    <Content Include="Views\Count\_Completed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repository\" />

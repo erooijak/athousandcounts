@@ -23,8 +23,10 @@ namespace AThousandCounts.Controllers
         }
         public ActionResult Index()
         {
-  
-            return View();
+            var r = new Random();
+            var count = db.Counts.ElementAt(r.Next(1, db.Counts.Count()));
+   
+            return View(count);
         }
 
         public ActionResult CreateVideo()

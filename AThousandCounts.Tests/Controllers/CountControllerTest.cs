@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AThousandCounts;
 using AThousandCounts.Controllers;
+using AThousandCounts.Models;
 
 namespace AThousandCounts.Tests.Controllers
 {
@@ -19,19 +20,10 @@ namespace AThousandCounts.Tests.Controllers
             CountController controller = new CountController();
 
             // Act
-            ViewResult result = controller.Index() as ViewResult;
-
+            var result = controller.Index() as ViewResult;
             // Assert
-            Assert.IsNotNull(result);
-        }
-
-        [TestMethod]
-        public void CreateVideoTest()
-        {
-            CountController controller = new CountController();
-            //mock httprequestbase
-            //controller.CreateVideo();
-
+            Assert.IsInstanceOfType(result, typeof(int), 
+                            "Counts model should be an integer");
 
         }
 

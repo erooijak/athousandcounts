@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,10 +41,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -145,6 +149,10 @@
     <Compile Include="Migrations\201403252135367_IPAddressString.Designer.cs">
       <DependentUpon>201403252135367_IPAddressString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404271804354_RestructuringTheCount.cs" />
+    <Compile Include="Migrations\201404271804354_RestructuringTheCount.Designer.cs">
+      <DependentUpon>201404271804354_RestructuringTheCount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ICountContext.cs" />
     <Compile Include="Models\CountContext.cs" />
@@ -153,6 +161,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01F8F6E2.htm" />
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\css\iconFont.min.css" />
     <Content Include="Content\css\metro-bootstrap-responsive.css" />
     <Content Include="Content\css\metro-bootstrap-responsive.min.css" />
@@ -302,6 +314,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\athousandcounts - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\athousandcounts - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\athousandcounts - Web Deploy %282%29.pubxml" />
@@ -337,7 +350,6 @@
     <Content Include="Views\Count\_WebCam.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
@@ -356,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201403252135367_IPAddressString.resx">
       <DependentUpon>201403252135367_IPAddressString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404271804354_RestructuringTheCount.resx">
+      <DependentUpon>201404271804354_RestructuringTheCount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -386,6 +401,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

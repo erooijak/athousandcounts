@@ -24,20 +24,13 @@ namespace AThousandCounts.Controllers
         public ActionResult Index()
         {
             var r = new Random();
-            var count = db.Counts.ElementAt(r.Next(1, db.Counts.Count()));
+            var counts = db.Counts.Where(c => c.Completed == false).ToList();
+            var count = counts.ElementAt(r.Next(1, counts.Count()));
    
-            return View(count);
+            return View(count.Count);
         }
 
-        public ActionResult CreateVideo()
-        {
-           
-            return View();  
-
-        }
-
-        [HttpPost]
-        public ActionResult GetIPAddress()
+        public void SaveIPAddress(int count)
         {
             var ipAddress = System.Web.HttpContext.Current.Request.UserHostName;
 
@@ -49,7 +42,6 @@ namespace AThousandCounts.Controllers
             db.Counts.Add(countModel);
             db.SaveChanges();
 
-            return View();
         }
 
     }

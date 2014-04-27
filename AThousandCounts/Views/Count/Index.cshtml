@@ -14,27 +14,23 @@
 
 <div class="span2">
     <div class="tile bg-yellow bg-hover-darkCyan bg-active-cyan" style="padding:10px;">
-        YOUR ADVERTISEMENT HERE
+        @Model
     </div>
     <div class="tile bg-green bg-hover-darkPink bg-active-lightOrange" style="padding:10px;">
-        YOUR ADVERTISEMENT HERE
+        @Model
     </div>
     <div class="tile bg-blue bg-focus-olive badge bg-hover-grayDark bg-active-mauve" style="padding:10px;">
-        YOUR ADVERTISEMENT HERE
+        @Model
     </div>
 
 </div>
 <div class="span7">
     <div class="tile quadro triple-vertical bg-lightPink bg-active-lightBlue" style="padding:10px; text-align: center;">
-
-        Your number is... <br /><br/>
-        <span class="COUNT">@(Model)!!!</span><br/><br/>
-        Click me to record a three second video of you pronouncing
-        this number in your language of choice.<br /><br />
-        Make yourself comfortable and get ready to join A Thousand Counts.<br /><br />
-
-        3, 2, 1, COUNT!
-
+        <div id="where-the-magic-happens">
+            @Html.Partial("_Count")
+           
+        </div>
+        <input type="submit" id="button" />
     </div>
 </div>
 <div class="span2">
@@ -51,7 +47,7 @@
         <br />
         <br />
         <br />
-        YOUR ADVERTISEMENT HERE
+        @Model
     </div>
 </div>
 
@@ -66,6 +62,17 @@
         </strong>
     </div>
     <div class="tile double attention bg-darkGreen bg-hover-blue bg-focus-darkBlue bg-active-darkMagenta" style="padding:10px;">
-        YOUR ADVERTISEMENT HERE
+        @Model
     </div>
 </div>
+
+<script type="text/javascript" language="JavaScript">
+    $(function () {
+        $('#button').on('submit', function (evt) {
+            evt.preventDefault();
+            $.post('/Count/WebCam', null, function (response) {
+                $('#where-the-magic-happens').html(response);
+            });
+        });
+    });
+</script>

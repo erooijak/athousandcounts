@@ -27,6 +27,12 @@ namespace AThousandCounts.Controllers
             return View(count.Count);
         }
 
+        [HttpPost]
+        public PartialViewResult WebCam()
+        {
+            return PartialView("_WebCam");
+        }
+
         public void SaveIPAddress(CountModel count)
         {
             var ipAddress = System.Web.HttpContext.Current.Request.UserHostName;

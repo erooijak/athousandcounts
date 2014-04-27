@@ -1,6 +1,12 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -56,5 +62,5 @@ body  {
 .COUNT {
     font-size: xx-large;
     color: green;
-    text-decoration: underline;
+    text-decoration: wavy;
 }

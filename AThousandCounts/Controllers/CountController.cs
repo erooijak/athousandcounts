@@ -22,8 +22,10 @@ namespace AThousandCounts.Controllers
         {
             var r = new Random();
             var counts = db.Counts.Where(c => c.Completed == false).ToList();
-            var count = counts.ElementAt(r.Next(1, counts.Count()));
+            var amountLeft = counts.Count();
+            var count = counts.ElementAt(r.Next(1, amountLeft));
    
+            ViewBag.CountsLeft = amountLeft;
             return View(count.Count);
         }
 

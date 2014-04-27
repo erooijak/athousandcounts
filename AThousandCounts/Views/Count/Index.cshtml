@@ -16,52 +16,26 @@
         });
     });
 </script>
-<div class="span2">
-    <div class="tile bg-yellow bg-hover-darkCyan bg-active-cyan" style="padding:10px;">
-        @Model
-    </div>
-    <div class="tile bg-green bg-hover-darkPink bg-active-lightOrange" style="padding:10px;">
-        @Model
-    </div>
-    <div class="tile bg-blue bg-focus-olive badge bg-hover-grayDark bg-active-mauve" style="padding:10px;">
-        @Model
-    </div>
-
+<div id="where-the-magic-happens">
+    @Html.Partial("_Count")
 </div>
-<div class="span7">
-    <div id="where-the-magic-happens">
-        @Html.Partial("_Count")
-    </div>
-</div>
-<div class="span2">
-    <div class="tile triple-vertical bg-crimson bg-hover-olive bg-active-grayLight bg-focus-darkIndigo" style="padding:10px;">
-        <br />
-        <div id="message"></div>
+<div class="tile quadro triple-vertical bg-lighterBlue bg-active-lightBlue" style="padding:10px;">
+    At A Thousand Counts we are
+    passionate about counting. That's why we are
+    creating a video of 1000 counters counting to one thousand.
+    You can be one! <br /><br />
+    A counter gets assigned a number in the range 1-1000.<br />
+    Every counter gets three seconds to count his or her assigned number 
+    into her or his webcam with microphone enabled.<br /><br />
+    Once 1000 videos are collected there will be no more numbers available.
+    The A Thousand Counts team will then put your clips
+    in sequence so that a video of 50 minutes will be created where
+    counters from all over the world are counting to 1000!
 
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        @Model
-    </div>
-</div>
+    <br /><br />
 
-
-<div class="span2">
-    <div class="tile double  double-vertical default bg-hover-lime bg-focus-lightPink bg-active-lightOrange" style="text-align:center; padding: 10px;">
-        <strong>
-
-            JEROWN CHIA BIERA
-            <img src="~/Content/images/jerownchiabiera.png" style="padding:10px;" />
-            <br />IT'S IN THE GAME
-        </strong>
-    </div>
-    <div class="tile double attention bg-darkGreen bg-hover-blue bg-focus-darkBlue bg-active-darkMagenta" style="padding:10px;">
-        @Model
-    </div>
+    Join the movement and count!<br /><br />
+    Count passionately. Count lively. Count clearly. Count expectantly.
+    But, make sure to count.  <br /><br />
+    Be quick. Click the pink square. There are only @ViewBag.CountsLeft counts left on A Thousand Counts...
 </div>

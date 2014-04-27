@@ -3,21 +3,23 @@
 <script language="JavaScript" src="~/ScriptCam/scriptcam.js"></script>
 <script language="JavaScript" src="~/Scripts/scriptcam-settings.js"></script>
 <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<div class="span7">
+    <div class="tile quadro triple-vertical bg-lightPink bg-active-lightBlue">
+        <div id="recorder">
+            <div id="webcam">
+            </div>
 
-<div class="tile quadro triple-vertical bg-lightPink bg-active-lightBlue">
-    <div id="recorder">
-        <div id="webcam">
+            <div class="brand bg-black">
+                <button id="recordStartButton" class="btn btn-small" onclick="startRecording()" disabled>Start Recording</button>&nbsp;
+                <span style="padding-left:5px;padding-right:5px;">
+                    Time left:
+                    <input type="text" id="timeLeft" style="width:50px;font-size:10px;">&nbsp;
+                </span>
+                <button id="recordStopButton" class="btn btn-small" onclick="closeCamera()" disabled>Stop Recording</button>
+            </div>
+            <div id="mediaplayer" style="display:none;"></div>
         </div>
-
-        <div class="brand bg-black">
-            <button id="recordStartButton" class="btn btn-small" onclick="startRecording()" disabled>Start Recording</button>&nbsp;
-            <span style="padding-left:5px;padding-right:5px;">
-                Time left:
-                <input type="text" id="timeLeft" style="width:50px;font-size:10px;">&nbsp;
-            </span>
-            <button id="recordStopButton" class="btn btn-small" onclick="closeCamera()" disabled>Stop Recording</button>
-        </div>
-        <div id="mediaplayer" style="display:none;"></div>
     </div>
 </div>
+<div id="message"></div>
 

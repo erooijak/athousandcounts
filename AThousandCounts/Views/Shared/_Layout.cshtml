@@ -12,7 +12,6 @@
             <nav class="navigation-bar-content">
                 <a href="@Url.Action("Index", "Count")"><item class="element">A Thousand Counts</item></a>
                 <item class="element-divider"></item>
-                <a href="@Url.Action("Index", "Explained")"><item class="element">Explained</item></a>
             </nav>
         </nav>
         <div class="grid">
@@ -24,9 +23,6 @@
             <hr />
             <p class="footer">&copy; @DateTime.Now.Year - A Thousand Counts</p>
         </footer>
-        @*@Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/metro")
-        @RenderSection("scripts", required: false)*@
     </div>
 </body>
 </html>

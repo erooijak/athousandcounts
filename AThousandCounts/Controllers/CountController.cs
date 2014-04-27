@@ -5,22 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using AThousandCounts.Models;
+using System.Data.Entity;
 
 namespace AThousandCounts.Controllers
 {
     public class CountController : Controller
     {
-        ICountContext db;
+        CountContext db;
 
         public CountController()
         {
             this.db = new CountContext();
         }
 
-        public CountController(ICountContext db)
-        {
-            this.db = db;
-        }
         public ActionResult Index()
         {
             var r = new Random();
@@ -30,18 +27,14 @@ namespace AThousandCounts.Controllers
             return View(count.Count);
         }
 
-        public void SaveIPAddress(int count)
+        public void SaveIPAddress(CountModel count)
         {
             var ipAddress = System.Web.HttpContext.Current.Request.UserHostName;
 
-            var countModel = new CountModel
-            {
-                IPAddress = ipAddress,
-            };
-
-            db.Counts.Add(countModel);
+            db.Counts.Attach(count);
+            db.Entry(count).Property(c => c.IPAddress).IsModified = true;
+            
             db.SaveChanges();
-
         }
 
     }

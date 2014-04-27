@@ -12,6 +12,8 @@ namespace AThousandCounts.Models
         IDbSet<CountModel> Counts { get; set; }
 
         int SaveChanges();
+
+        object Entry(object count);
     }
 
 }

@@ -21,12 +21,17 @@ namespace AThousandCounts.Controllers
         public ActionResult Index()
         {
             var r = new Random();
+            var number = 0;
             var counts = db.Counts.Where(c => c.Completed == false).ToList();
-            var amountLeft = counts.Count();
-            var count = counts.ElementAt(r.Next(1, amountLeft));
-   
-            ViewBag.CountsLeft = amountLeft;
-            return View(count.Count);
+            var countsLeft = counts.Count();
+
+            if (countsLeft > 0)
+            {
+                number = counts.ElementAt(r.Next(1, countsLeft)).Count;
+            }
+
+            ViewBag.CountsLeft = countsLeft;
+            return View(number);
         }
 
         [HttpPost]
@@ -35,10 +40,12 @@ namespace AThousandCounts.Controllers
             return PartialView("_WebCam");
         }
 
-        public void SaveIPAddress(CountModel count)
+
+        public void SaveIPAddress(int id)
         {
             var ipAddress = System.Web.HttpContext.Current.Request.UserHostName;
-            
+            var count = db.Counts.Where(c => c.Count == id).FirstOrDefault();
+
             count.IPAddress = ipAddress;
             db.Counts.Attach(count);
             db.Entry(count).Property(c => c.IPAddress).IsModified = true;

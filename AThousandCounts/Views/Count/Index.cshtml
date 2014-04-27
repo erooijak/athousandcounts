@@ -6,12 +6,6 @@
 <script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-<!-- Please download the JW Player plugin from http://www.longtailvideo.com/jw-player/download -->
-<!--<script type="text/javascript" src="/jwplayer/jwplayer.js"></script>-->
-<script language="JavaScript" src="~/ScriptCam/scriptcam.js"></script>
-<script language="JavaScript" src="~/Scripts/scriptcam-settings.js"></script>
-<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-
 <div class="span2">
     <div class="tile bg-yellow bg-hover-darkCyan bg-active-cyan" style="padding:10px;">
         @Model
@@ -25,12 +19,10 @@
 
 </div>
 <div class="span7">
-    <div class="tile quadro triple-vertical bg-lightPink bg-active-lightBlue" style="padding:10px; text-align: center;">
+    <div id="button" class="tile quadro triple-vertical bg-lightPink bg-active-lightBlue" style="padding:10px; text-align: center;">
         <div id="where-the-magic-happens">
             @Html.Partial("_Count")
-           
         </div>
-        <input type="submit" id="button" />
     </div>
 </div>
 <div class="span2">
@@ -68,7 +60,7 @@
 
 <script type="text/javascript" language="JavaScript">
     $(function () {
-        $('#button').on('submit', function (evt) {
+        $('#button').on('click', function (evt) {
             evt.preventDefault();
             $.post('/Count/WebCam', null, function (response) {
                 $('#where-the-magic-happens').html(response);

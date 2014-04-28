@@ -23,5 +23,11 @@ namespace AThousandCounts.Migrations
                 );
             }
         }
+
+        public void SeedFromAppStart()
+        {
+            var db = new CountContext();
+            Seed(db);
+        }
     }
 }

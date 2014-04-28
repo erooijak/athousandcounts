@@ -21,9 +21,8 @@ namespace AThousandCounts
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //var config = new Configuration();  
-            //var db = new CountContext();
-            //config.Seed(db);
+            var config = new Configuration();
+            config.SeedFromAppStart();
         }
     }
 }

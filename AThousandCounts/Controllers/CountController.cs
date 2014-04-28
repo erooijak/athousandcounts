@@ -40,15 +40,18 @@ namespace AThousandCounts.Controllers
             return PartialView("_WebCam");
         }
 
-
-        public void SaveIPAddress(int id)
+        [HttpPost]
+        public void CompleteCount(int id)
         {
             var ipAddress = System.Web.HttpContext.Current.Request.UserHostName;
             var count = db.Counts.Where(c => c.Count == id).FirstOrDefault();
 
             count.IPAddress = ipAddress;
+            count.Completed = true;
+
             db.Counts.Attach(count);
             db.Entry(count).Property(c => c.IPAddress).IsModified = true;
+            db.Entry(count).Property(c => c.Completed).IsModified = true;
             
             db.SaveChanges();
         }

@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿$(function () {
     $("#webcam").scriptcam({
         width: 520,
         height: 360,
@@ -32,6 +32,7 @@ function closeCamera() {
     $("#recordStopButton").attr("disabled", true);
     $.scriptcam.closeCamera();
     $('#message').html('Please wait for the file conversion to finish...');
+    completeCount();
 }
 function fileReady(fileName) {
     $('#recorder').hide();
@@ -45,4 +46,9 @@ function onError(errorId, errorMsg) {
 
 function timeLeft(value) {
     $('#timeLeft').val(value);
+}
+
+function completeCount() {
+    var id = $("#count").text();
+    $.post('/Count/CompleteCount/' + id, null);
 }

@@ -20,6 +20,14 @@ namespace AThousandCounts.Controllers
 
         public ActionResult Index()
         {
+            var ipAddress = System.Web.HttpContext.Current.Request.UserHostName;
+            int oldNumber;
+            if (CheckIpAddress(ipAddress, out oldNumber))
+            {
+                ViewBag.BeenAround = oldNumber;
+                return View(-1);
+            }
+
             var r = new Random();
             var number = 0;
             var counts = db.Counts.Where(c => c.Completed == false).ToList();
@@ -41,6 +49,12 @@ namespace AThousandCounts.Controllers
         }
 
         [HttpPost]
+        public PartialViewResult PinkSquare()
+        {
+            return PartialView("_Count");
+        }
+
+        [HttpPost]
         public void CompleteCount(int id)
         {
             var ipAddress = System.Web.HttpContext.Current.Request.UserHostName;
@@ -56,5 +70,15 @@ namespace AThousandCounts.Controllers
             db.SaveChanges();
         }
 
+        private bool CheckIpAddress(string ip, out int oldNumber)
+        {
+            oldNumber = 0;
+            if (db.Counts.Any(c => c.IPAddress == ip))
+            {
+                oldNumber = db.Counts.Where(c => c.IPAddress == ip).FirstOrDefault().Count;
+                return true;
+            }
+            return false;
+        }
     }
 }

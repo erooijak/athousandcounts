@@ -12,7 +12,7 @@
         timeLeft: timeLeft,
         fileName: 'athousandcounts',
         connected: showRecord,
-        maximumTime: 10
+        maximumTime: 5
     });
 
 });
@@ -31,14 +31,13 @@ function closeCamera() {
     $("#recordPauseResumeButton").attr("disabled", true);
     $("#recordStopButton").attr("disabled", true);
     $.scriptcam.closeCamera();
-    $('#message').html('Please wait for the file conversion to finish...');
-    completeCount();
+    setMessage();
 }
 function fileReady(fileName) {
     $('#recorder').hide();
     $('#message').html('Thank you for participating at A Thousand Counts. You can check your recording for five minutes <a href=' + fileName + '>here</a>.<br/><br/>If you know other happy counters like you please invite them!');
     var fileNameNoExtension = fileName.replace(".mp4", "");
-
+    completeCount();
 }
 function onError(errorId, errorMsg) {
     alert(errorMsg);
@@ -46,6 +45,10 @@ function onError(errorId, errorMsg) {
 
 function timeLeft(value) {
     $('#timeLeft').val(value);
+}
+
+function setMessage() {
+    $('#message').html('Please wait for the file conversion to finish...');
 }
 
 function completeCount() {

@@ -23,6 +23,10 @@
         </script>
         @Html.Partial("_Count")
     }
+    else if (Model == -1)
+    {
+        @Html.Partial("_BeenAround")
+    }
     else
     {
         @Html.Partial("_Completed")

@@ -9,8 +9,7 @@ namespace AThousandCounts.Models
 {
     public class CountContext : DbContext
     {
-        public CountContext()
-            : base("DefaultConnection")
+        public CountContext() : base("AzureSqlConnection")
         {
         }
 

@@ -349,6 +349,7 @@
     <Content Include="Views\Count\_Completed.cshtml" />
     <Content Include="Views\Count\404.cshtml" />
     <Content Include="Views\Count\Error.cshtml" />
+    <Content Include="Views\Count\_BeenAround.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repository\" />

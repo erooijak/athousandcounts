@@ -7,10 +7,12 @@
         cornerRadius: 20,
         cornerColor: 'e3e5e2',
         onError: onError,
-        showMicrophoneErrors: false,
+        showMicrophoneErrors: true,
+        useMicrophone: true,
         timeLeft: timeLeft,
         fileName: 'athousandcounts',
-        connected: showRecord
+        connected: showRecord,
+        maximumTime: 10
     });
 
 });

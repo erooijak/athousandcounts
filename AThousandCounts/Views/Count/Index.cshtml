@@ -7,25 +7,26 @@
 <script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-<script language="JavaScript">
-    $(function () {
-        $('#button').on('click', function (e) {
-            e.preventDefault();
-            $.post('/Count/WebCam', null, function (response) {
-                $('#where-the-magic-happens').html(response);
-            });
-        });
-    });
-</script>
+
 <div id="where-the-magic-happens">
-@if (Model > 0)
-{
-    @Html.Partial("_Count")
-}
-else
-{
-    @Html.Partial("_Completed")
-}
+    @if (Model > 0)
+    {
+        <script language="JavaScript">
+            $(function () {
+                $('#button').on('click', function (e) {
+                    e.preventDefault();
+                    $.post('/Count/WebCam', null, function (response) {
+                        $('#where-the-magic-happens').html(response);
+                    });
+                });
+            });
+        </script>
+        @Html.Partial("_Count")
+    }
+    else
+    {
+        @Html.Partial("_Completed")
+    }
 </div>
 @if (Model > 0)
 {

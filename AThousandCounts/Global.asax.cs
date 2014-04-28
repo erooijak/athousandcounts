@@ -20,9 +20,6 @@ namespace AThousandCounts
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            var config = new Configuration();
-            config.SeedFromAppStart();
         }
     }
 }

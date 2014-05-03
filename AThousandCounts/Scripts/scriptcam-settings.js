@@ -33,9 +33,10 @@ function closeCamera() {
     $.scriptcam.closeCamera();
     setMessage();
 }
-function fileReady(fileName) {
+function fileReady() {
+    fileName = $("#count").text();
     $('#recorder').hide();
-    $('#message').html('Thank you for participating at A Thousand Counts. You can check your recording for five minutes <a href=' + fileName + '>here</a>.<br/><br/>If you know other happy counters like you please invite them!');
+    $('#message').html('Thank you for participating at A Thousand Counts. Your clip will be processed into a video once we have received 1000 counts.<br/><br/>If you know other happy counters like you please invite them!');
     var fileNameNoExtension = fileName.replace(".mp4", "");
     completeCount();
 }

@@ -1,5 +1,5 @@
 ﻿$(function () {
-    var theFileName = 'athousandcounts' + $("#count").text();
+    var theFileName = ('athousandcounts' + $("#count").text()).toString();
     $("#webcam").scriptcam({
         width: 520,
         height: 360,

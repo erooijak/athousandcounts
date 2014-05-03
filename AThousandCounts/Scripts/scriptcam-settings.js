@@ -1,4 +1,5 @@
 ﻿$(function () {
+    var theFileName = 'athousandcounts' + $("#count").text();
     $("#webcam").scriptcam({
         width: 520,
         height: 360,
@@ -10,7 +11,7 @@
         showMicrophoneErrors: true,
         useMicrophone: true,
         timeLeft: timeLeft,
-        fileName: 'athousandcounts-' + $("#count").text() + '-',
+        fileName: theFileName,
         connected: showRecord,
         maximumTime: 5
     });

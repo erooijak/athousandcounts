@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model int
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -12,6 +13,10 @@
             <nav class="navigation-bar-content">
                 <a href="@Url.Action("Index", "Count")"><item class="element">A Thousand Counts</item></a>
                 <item class="element-divider"></item>
+                @if (Model > 0)
+                {
+                <a href="@Url.Action("Index", "Count")"><item class="element">@Model</item></a>
+                }
             </nav>
         </nav>
         <div class="grid">

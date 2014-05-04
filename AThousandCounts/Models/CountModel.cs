@@ -11,6 +11,8 @@ namespace AThousandCounts.Models
         [Key]
         public int Count { get; set; }
         public string IPAddress { get; set; }
-        public bool Completed { get; set; }
+        public bool Completed { get ; set; }
+
+        
     }
 }

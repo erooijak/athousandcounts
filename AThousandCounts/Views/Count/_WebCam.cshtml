@@ -2,6 +2,7 @@
 <!--<script type="text/javascript" src="/jwplayer/jwplayer.js"></script>-->
 <script language="JavaScript" src="~/ScriptCam/scriptcam.js"></script>
 <script language="JavaScript" src="~/Scripts/scriptcam-settings.js"></script>
+
 <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <div class="span7">
     <div class="tile quadro triple-vertical bg-lightPink bg-active-lightBlue">
@@ -11,7 +12,7 @@
             </div>
 
             <div class="brand bg-black">
-                <button id="recordStartButton" class="success" onclick="startRecording()" disabled>Start Recording</button>&nbsp;
+                <button id="recordStartButton" class="success" onclick="startRecordingWithCounter(startRecording)" disabled>Start Recording</button>&nbsp;
                 <span style="padding-left:5px;padding-right:5px;">
                     Time left:
                     <input type="text" id="timeLeft" style="width:50px;font-size:10px;">&nbsp;

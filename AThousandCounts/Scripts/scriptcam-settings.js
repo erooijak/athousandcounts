@@ -1,5 +1,6 @@
 ﻿$(function () {
-    var theFileName = ('athousandcounts' + $("#count").text()).toString();
+    var thisCount = $("#count").text();
+    var theFileName = ('athousandcounts' + thisCount).toString();
     $("#webcam").scriptcam({
         width: 520,
         height: 360,
@@ -13,11 +14,42 @@
         timeLeft: timeLeft,
         fileName: theFileName,
         connected: showRecord,
-        maximumTime: 5
+        maximumTime: 10
     });
+    jQuery.fn.extend({
+        animateCount: function (from, to, time) {
+            var steps = 1,
+                self = this,
+                counter;
 
+            if (to - from > 0) {
+                steps = -1;
+            };
+
+            to -= steps;
+
+            function step() {
+                self.text(to += steps);
+
+                if ((steps < 0 && from >= to) || (steps > 0 && to >= from)) {
+                    clearInterval(counter);
+                };
+
+                if (to === 0)
+                {
+                    self.text('COUNT ' + thisCount + '!');
+                }
+            };
+
+            counter = setInterval(step, time || 100);
+        }
+    });
+ 
 });
-
+function startRecordingWithCounter(callback) {
+    $('#where-the-magic-happens').animateCount(0, 3, 1000);
+    setTimeout(callback, 3000);
+}
 function showRecord() {
     $("#recordStartButton").attr("disabled", false);
 }

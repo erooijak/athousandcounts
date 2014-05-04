@@ -13,12 +13,13 @@
 
             <div class="brand bg-black">
                 <button id="recordStartButton" class="success" onclick="startRecordingWithCounter(startRecording)" disabled>Start Recording</button>&nbsp;
-                <span style="padding-left:5px;padding-right:5px;">
-                    Time left:
+                <span style="padding-left:5px;padding-right:5px;color:white;">
+                    Max time left:
                     <input type="text" id="timeLeft" style="width:50px;font-size:10px;">&nbsp;
                 </span>
                 <button id="recordStopButton" class="danger" onclick="closeCamera()" disabled>Stop Recording</button>
-            </div>
+                <span id="messageNextToButton" style="padding-left:5px;padding-right:5px;color:white;"></span>
+</div>
             <div id="mediaplayer" style="display:none;"></div>
         </div>
     </div>

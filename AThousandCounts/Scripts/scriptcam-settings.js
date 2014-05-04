@@ -47,7 +47,7 @@
  
 });
 function startRecordingWithCounter(callback) {
-    $('#where-the-magic-happens').animateCount(0, 3, 1000);
+    $('#messageNextToButton').animateCount(0, 3, 1000);
     setTimeout(callback, 3000);
 }
 function showRecord() {

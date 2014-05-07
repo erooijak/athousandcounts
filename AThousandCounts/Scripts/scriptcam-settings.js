@@ -4,7 +4,6 @@
     var theFileName = ('athousandcounts' + thisCount).toString();
 
     $("#webcam").scriptcam({
-        promptWillShow: showMessage,
         width: 520,
         height: 360,
         path: '/ScriptCam/',
@@ -53,9 +52,6 @@
     });
 
 });
-function showMessage() {
-    alert('A security dialog will be shown. Please click ACCEPT before recording.');
-}
 function startRecordingWithCounter(callback) {
     $('#popup').show();
     $('#popupText').animateCount(0, 4, 1000);

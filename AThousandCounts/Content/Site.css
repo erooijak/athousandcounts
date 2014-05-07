@@ -70,11 +70,11 @@ body  {
     border: solid 1px black;
     position: fixed;
     left: 20%;
-    top: 10%;
+    top: 7%;
     background-color: white;
     z-index: 1;
 
-    height: 130px;
+    height: 100px;
     margin-top: 0px;
 
     width: 420px;

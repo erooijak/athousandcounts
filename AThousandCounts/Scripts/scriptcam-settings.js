@@ -1,6 +1,8 @@
 ﻿$(function () {
     var thisCount = $("#count").text();
+    var countsLeft = $("#countsLeft").text();
     var theFileName = ('athousandcounts' + thisCount).toString();
+
     $("#webcam").scriptcam({
         width: 520,
         height: 360,
@@ -74,7 +76,7 @@ function closeCamera() {
 }
 function fileReady(fileName) {
     $('#recorder').hide();
-    $('#message').html('Thank you for participating at A Thousand Counts. Your clip will be processed into a video once we have received 1000 counts.<br/><br/>If you know other happy counters like you please invite them!');
+    $('#finalMessage').html('Thank you for participating at A Thousand Counts. Your clip will be processed into a video once we have received the last ' + (1000 - countsLeft).toString() + '<br/><br/>If you know other happy counters like you please invite them!');
     var fileNameNoExtension = fileName.replace(".mp4", "");
     completeCount();
 }

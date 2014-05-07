@@ -9,25 +9,11 @@
 </head>
 <body class="metro">
     <div class="container">
-        <nav class="navigation-bar dark">
-            <nav class="navigation-bar-content">
-                <a href="@Url.Action("Index", "Count")"><item class="element">A Thousand Counts</item></a>
-                <item class="element-divider"></item>
-                @if (Model > 0)
-                {
-                <a href="@Url.Action("Index", "Count")"><item class="element">@Model</item></a>
-                }
-            </nav>
-        </nav>
         <div class="grid">
             <div class="row">
                 @RenderBody()
             </div>
         </div>
-        <footer>
-            <hr />
-            <p class="footer">&copy; @DateTime.Now.Year - A Thousand Counts</p>
-        </footer>
     </div>
 </body>
 </html>

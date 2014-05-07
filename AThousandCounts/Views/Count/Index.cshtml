@@ -1,13 +1,27 @@
 ﻿@model int
 
 @{
-    ViewBag.Title = "Home";
+    ViewBag.Title = "A Thousand Counts";
 }
 
 <script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <script language="JavaScript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-
+<script language="JavaScript" type="text/javascript">
+    $(function () {
+        $('#popup').hide();
+    });
+</script>
+<div id="popup" class="tile quadro bg-lightPink bg-active-lightBlue">
+    <br />
+    <br />
+    <br />
+    <br />
+    <span id="popupText" class="header" onclick="startRecordingWithCounter(startRecording)">
+        START RECORDING
+        <span class="readable-text">&nbsp;&nbsp;(Press STOP RECORDING when you're finished)</span>
+    </span>
+</div>
 <div id="where-the-magic-happens">
     @if (Model > 0)
     {
@@ -18,7 +32,8 @@
                     $.post('/Count/WebCam', null, function (response) {
                         $('#where-the-magic-happens').html(response);
                     });
-                });         
+                    $('#popup').show();
+                });
             });
         </script>
         @Html.Partial("_Count")
@@ -31,10 +46,6 @@
     {
         @Html.Partial("_Completed")
     }
+    <div id="message"></div>
 </div>
-@if (Model > 0)
-{
-    @Html.Partial("_Explained");
-}
-
 <div id="count" style="display: none;">@Model</div>

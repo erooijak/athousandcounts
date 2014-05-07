@@ -31,14 +31,18 @@
             function step() {
                 self.text(to += steps);
 
+                if (to === 4) {
+                    self.text('COUNT ' + thisCount + '!');
+                }
+
                 if ((steps < 0 && from >= to) || (steps > 0 && to >= from)) {
                     clearInterval(counter);
                 };
 
-                if (to === 0)
-                {
-                    self.text('COUNT ' + thisCount + '!');
+                if (to === 0) {
+                    self.text('COUNT!');
                 }
+
             };
 
             counter = setInterval(step, time || 100);
@@ -47,13 +51,15 @@
  
 });
 function startRecordingWithCounter(callback) {
-    $('#messageNextToButton').animateCount(0, 3, 1000);
-    setTimeout(callback, 3000);
+    $('#popup').show();
+    $('#popupText').animateCount(0, 4, 1000);
+    setTimeout(callback, 5200);
 }
 function showRecord() {
     $("#recordStartButton").attr("disabled", false);
 }
 function startRecording() {
+    $('#popup').hide();
     $("#recordStartButton").attr("disabled", true);
     $("#recordStopButton").attr("disabled", false);
     $("#recordPauseResumeButton").attr("disabled", false);
@@ -73,7 +79,7 @@ function fileReady(fileName) {
     completeCount();
 }
 function onError(errorId, errorMsg) {
-    alert(errorMsg);
+    $('#message').html('Please wait for the file conversion to finish...');
 }
 
 function timeLeft(value) {

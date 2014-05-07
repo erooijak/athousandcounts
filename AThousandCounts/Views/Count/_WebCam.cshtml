@@ -6,21 +6,17 @@
 <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <div class="span7">
     <div class="tile quadro triple-vertical bg-lightPink bg-active-lightBlue">
-        <div id="message"></div>
         <div id="recorder">
             <div id="webcam">
             </div>
 
-            <div class="brand bg-black">
-                <button id="recordStartButton" class="success" onclick="startRecordingWithCounter(startRecording)" disabled>Start Recording</button>&nbsp;
-                <span style="padding-left:5px;padding-right:5px;color:white;">
-                    Max time left:
-                    <input type="text" id="timeLeft" style="width:50px;font-size:10px;">&nbsp;
-                </span>
-                <button id="recordStopButton" class="danger" onclick="closeCamera()" disabled>Stop Recording</button>
-                <span id="messageNextToButton" style="padding-left:5px;padding-right:5px;color:white;"></span>
-</div>
+            <div class="brand bg-black text-right" style="padding-left:5px;padding-right:5px; color: white;">
+                Max left:
+                <input type="text" id="timeLeft" style="width:50px;font-size:10px;" value="00:10" />&nbsp;
+                <button id="recordStopButton" class="danger" onclick="closeCamera()" disabled>STOP RECORDING</button>
+            </div>
             <div id="mediaplayer" style="display:none;"></div>
         </div>
     </div>
+    <div id="message"></div>
 </div>

@@ -52,14 +52,11 @@
     });
 
 });
-
-function showPopupMessageWithCounter() {
+function startRecordingWithCounter(callback) {
+    $('#message').html();
     $('#popup').show();
     $('#popupText').animateCount(0, 4, 1000);
-}
-function startRecordingWithCounter(callback) {
-    setTimeOut(showPopupMessageWithCounter, 3000);
-    setTimeout(callback, 8200);
+    setTimeout(callback, 5200);
 }
 function showRecord() {
     $("#recordStartButton").attr("disabled", false);

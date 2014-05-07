@@ -30,9 +30,14 @@
                     $.post('/Count/WebCam', null, function (response) {
                         $('#where-the-magic-happens').html(response);
                     });
-                    $('#popup').show();
+
+                    setTimeout(displayPopup, 5000);
                 });
             });
+
+            function displayPopup() {
+                $('#popup').show();
+            }
         </script>
         @Html.Partial("_Count")
     }

@@ -1,6 +1,6 @@
 ﻿$(function () {
     var thisCount = $("#count").text();
-    var countsLeft = $("#countsLeft").text();
+    var countsLeft = parseInt($("#countsLeft").text());
     var theFileName = ('athousandcounts' + thisCount).toString();
 
     $("#webcam").scriptcam({

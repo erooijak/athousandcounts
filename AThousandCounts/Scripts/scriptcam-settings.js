@@ -53,7 +53,6 @@
 
 });
 function startRecordingWithCounter(callback) {
-    $('#message').html();
     $('#popup').show();
     $('#popupText').animateCount(0, 4, 1000);
     setTimeout(callback, 5200);
@@ -77,7 +76,8 @@ function closeCamera() {
 }
 function fileReady(fileName) {
     $('#recorder').hide();
-    $('#finalMessage').html('Thank you for participating at A Thousand Counts. Your clip will be processed into a video once we have received the last ' + (1000 - countsLeft).toString() + '<br/><br/>If you know other happy counters like you please invite them!');
+    $('#message').fadeOut();
+    $('#finalMessage').html('Thank you for participating at A Thousand Counts. Your clip will be processed into a video once we have received the last ' + countsLeft + ' counts.<br/><br/>If you know other happy counters like you please invite them!');
     var fileNameNoExtension = fileName.replace(".mp4", "");
     completeCount();
 }

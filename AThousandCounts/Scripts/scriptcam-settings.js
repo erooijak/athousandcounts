@@ -61,6 +61,7 @@ function showRecord() {
 }
 function startRecording() {
     $('#popup').hide();
+    $('#message').html('Please press STOP RECORDING when you are finished.');
     $("#recordStartButton").attr("disabled", true);
     $("#recordStopButton").attr("disabled", false);
     $("#recordPauseResumeButton").attr("disabled", false);
@@ -77,7 +78,7 @@ function fileReady(fileName) {
     $('#recorder').hide();
     $('#message').fadeOut();
     var countsLeft = $("#countsLeft").text();
-    var finalMessage = 'Thank you for participating at A Thousand Counts. Your clip will be processed into a video once we have received the last ' + countsLeft + ' counts.<br/><br/>If you know other happy counters like you please invite them!';
+    var finalMessage = 'Thank you for participating at A Thousand Counts. Your clip will be processed into a video once we have received the remaining ' + countsLeft + ' counts. If you know other happy counters like you please invite them!';
     $('#finalMessage').text(finalMessage);
     var fileNameNoExtension = fileName.replace(".mp4", "");
     completeCount();

@@ -61,7 +61,7 @@ function showRecord() {
 }
 function startRecording() {
     $('#popup').hide();
-    $('#message').html('Please press STOP RECORDING when you are finished.');
+    $('#message').html('Please press STOP RECORDING when you are finished counting.');
     $("#recordStartButton").attr("disabled", true);
     $("#recordStopButton").attr("disabled", false);
     $("#recordPauseResumeButton").attr("disabled", false);

@@ -38,7 +38,7 @@ namespace AThousandCounts.Controllers
                 number = counts.ElementAt(r.Next(1, countsLeft)).Count;
             }
 
-            ViewBag.CountsLeft = countsLeft;
+            ViewBag.CountsLeft = countsLeft - 1;
             return View(number);
         }
 

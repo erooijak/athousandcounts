@@ -31,13 +31,9 @@
                         $('#where-the-magic-happens').html(response);
                     });
 
-                    setTimeout(displayPopup, 3000);
+                    $('#popup').show();
                 });
             });
-
-            function displayPopup() {
-                $('#popup').show();
-            }
         </script>
         @Html.Partial("_Count")
     }

@@ -54,7 +54,7 @@
 function startRecordingWithCounter(callback) {
     $('#popup').show();
 
-    $('#popupText').animateCount(0, 4, 1000);
+    $('#popup').animateCount(0, 4, 1000);
     setTimeout(callback, 5200);
 }
 function showRecord() {

@@ -70,14 +70,14 @@ body  {
     border: solid 1px black;
     position: fixed;
     left: 20%;
-    top: 7%;
+    top: 6%;
     background-color: white;
     z-index: 1;
 
-    height: 100px;
+    height: 108px;
     margin-top: 0px;
 
-    width: 420px;
+    width: 450px;
     margin-left: -100px;
 }
 

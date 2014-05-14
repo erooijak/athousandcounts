@@ -12,13 +12,13 @@
         $('#popup').hide();
     });
 </script>
-<div id="popup" class="tile quadro bg-lightPink bg-active-lightBlue">
+<div id="popup" class="bg-lightPink bg-active-lightBlue">
    
 
-    <span id="popupText" class="header" onclick="startRecordingWithCounter(startRecording)">
+    <button disabled="disabled" id="popupText" class="header" onclick="startRecordingWithCounter(startRecording)">
         START RECORDING
         <span class="readable-text">&nbsp;&nbsp;(Press STOP RECORDING when you're finished)</span>
-    </span>
+    </button>
 </div>
 <div id="where-the-magic-happens">
     @if (Model > 0)

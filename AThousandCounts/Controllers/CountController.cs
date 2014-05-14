@@ -35,8 +35,7 @@ namespace AThousandCounts.Controllers
 
             if (countsLeft > 0)
             {
-                number = counts.First().Count;
-                //counts.ElementAt(r.Next(1, countsLeft)).Count;
+                number = counts.ElementAt(r.Next(1, countsLeft)).Count;
             }
 
             ViewBag.CountsLeft = countsLeft - 1;

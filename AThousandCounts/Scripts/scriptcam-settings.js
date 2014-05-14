@@ -63,7 +63,7 @@ function showRecord() {
 function startRecording() {
     $('#popup').hide();
     $('#message').html('Please press STOP RECORDING when you have said your number.');
-    $("#recordStartButton").attr("disabled", true);
+    $("#popupText").attr("disabled", true);
     $("#recordStopButton").attr("disabled", false);
     $("#recordPauseResumeButton").attr("disabled", false);
     $.scriptcam.startRecording();

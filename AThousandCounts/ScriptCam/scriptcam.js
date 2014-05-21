@@ -170,7 +170,7 @@
 		skewX:0,
 		skewY:0,
 		flip:0,
-		noFlashFound:'<p>You need <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player 11.7</a> to use this software.<br/>Please click on the link to download the installer.</p>'
+		noFlashFound: '<br/><br/><br/><br/><br/><br/><br/><br/><p>You need <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player 11.7</a> to use this software.<br/>Please click on the link to download the installer.</p>'
 	};
 })(jQuery);
 

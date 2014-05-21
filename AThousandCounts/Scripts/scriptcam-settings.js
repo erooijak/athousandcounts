@@ -79,13 +79,13 @@ function fileReady(fileName) {
     $('#recorder').hide();
     $('#message').fadeOut();
     var countsLeft = $("#countsLeft").text();
-    var finalMessage = 'Thank you for participating at A Thousand Counts. Your clip will be processed into a video once we have received the remaining ' + countsLeft + ' counts. If you know other happy counters like you please invite them!';
+    var finalMessage = 'Thank you for participating at A Thousand Counts. Your clip will be incorporated in a video once we have received the remaining ' + countsLeft + ' counts. Stay tuned. If you know other happy counters like you please invite them!';
     $('#finalMessage').text(finalMessage);
     var fileNameNoExtension = fileName.replace(".mp4", "");
     completeCount();
 }
 function onError(errorId, errorMsg) {
-    $('#message').html('Please wait for the file conversion to finish...');
+    $('#message').html('ERROR!');
 }
 
 function timeLeft(value) {

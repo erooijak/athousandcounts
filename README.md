@@ -8,9 +8,9 @@ The site is made with the [ASP.NET-MVC 5](http://www.asp.net/mvc) framework and 
 
 [![A Thousand Counts](https://raw.github.com/erooijak/athousandcounts/master/AThousandCounts/Content/images/athousandcounts_29_pioneers_YouTube_video.png)](https://www.youtube.com/watch?v=4JWUwdvbwpM)
 
-
+<br><br> 
 Created by Erwin Rooijakkers (erwinrooijakkers@gmail.com)
 Version 1 (28/04/2014)
 https://github.com/erooijak/athousandcounts/tree/master/AThousandCounts/Content/images
-
+<br><br> 
 **Join the counter movement.**

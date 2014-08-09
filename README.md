@@ -10,7 +10,7 @@ The site is made with the [ASP.NET-MVC 5](http://www.asp.net/mvc) framework and 
 
 
 Created by Erwin Rooijakkers (erwinrooijakkers@gmail.com)
-Version 1 (June 2014)
+Version 1 (28/04/2014)
 
 
 **Join the counter movement.**
